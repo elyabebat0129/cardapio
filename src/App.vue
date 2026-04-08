@@ -40,6 +40,10 @@ const adicionarItem = (novoItem) => {
   })
 }
 
+const alterarFiltro = (categoria) => {
+  filtroAtual.value = categoria
+}
+
 const removerItem = (id) => {
   itens.value = itens.value.filter((item) => item.id !== id)
 }
@@ -84,7 +88,11 @@ onMounted(() => {
 
     <MenuForm @add-item="adicionarItem" />
 
-    <MenuFilters />
+    <MenuFilters
+      :categorias="categorias"
+      :filtro-atual="filtroAtual"
+      @change-filter="alterarFiltro"
+    />
 
     <MenuItens />
   </main>
