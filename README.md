@@ -1,7 +1,7 @@
 # Digital Menu App
 
 A Vue 3 application built with Vite to manage a fictional snack bar menu.
-The system allows adding itens, filtering by category, viewing a dynamic summary, and removing products.
+The system allows adding items, filtering by category, viewing a dynamic summary, and removing products.
 
 ---
 
@@ -33,16 +33,16 @@ npm run build
 
 ## Features
 
-* Add menu itens with name, price, category, and availability
-* Display itens as cards
-* Visual highlight for unavailable itens
+* Add menu items with name, price, category, and availability
+* Display items as cards
+* Visual highlight for unavailable items
 * Filter by category with active filter highlight
 * Dynamic summary showing:
 
-  * total itens
-  * available itens
+  * total items
+  * available items
   * average price
-* Remove itens from the menu
+* Remove items from the menu
 
 ---
 
@@ -52,12 +52,12 @@ npm run build
   Main component responsible for managing state, calculations, and communication between components
 
 * **MenuForm.vue**
-  Form to add new itens
+  Form to add new items
 
 * **MenuFilters.vue**
   Category filter buttons
 
-* **MenuItens.vue**
+* **Menuitens.vue**
   Displays item cards and handles item removal
 
 ---
@@ -77,15 +77,15 @@ Used in `src/App.vue` to store main application state:
 
 Used in `src/App.vue` for derived data:
 
-* `itensFiltrados` → filters itens based on selected category
-* `totalDisponiveis` → counts available itens
-* `precoMedioVisivel` → calculates average price of visible itens
+* `itensFiltrados` → filters items based on selected category
+* `totalDisponiveis` → counts available items
+* `precoMedioVisivel` → calculates average price of visible items
 
 ---
 
 ### `onMounted`
 
-Used in `src/App.vue` to load initial itens when the component is mounted.
+Used in `src/App.vue` to load initial items when the component is mounted.
 
 ---
 
@@ -100,7 +100,7 @@ Used in `src/components/MenuForm.vue` to control form fields.
 Used to pass data from parent to child components:
 
 * `MenuFilters.vue` receives categories and current filter
-* `MenuItens.vue` receives itens
+* `Menuitems.vue` receives items
 
 ---
 
@@ -110,7 +110,7 @@ Used for child-to-parent communication:
 
 * `MenuForm.vue` emits `add-item`
 * `MenuFilters.vue` emits `change-filter`
-* `MenuItens.vue` emits `remove-item`
+* `Menuitems.vue` emits `remove-item`
 
 ---
 
@@ -125,13 +125,13 @@ Used in `MenuForm.vue` to bind form fields to reactive state.
 Used to render lists:
 
 * categories in `MenuFilters.vue`
-* itens in `MenuItens.vue`
+* items in `Menuitems.vue`
 
 ---
 
 ### `v-if` / `v-else`
 
-Used in `MenuItens.vue` to display itens or an empty state message.
+Used in `Menuitems.vue` to display items or an empty state message.
 
 ---
 
@@ -140,7 +140,7 @@ Used in `MenuItens.vue` to display itens or an empty state message.
 Used to change styles based on state:
 
 * active filter in `MenuFilters.vue`
-* unavailable item in `MenuItens.vue`
+* unavailable item in `Menuitems.vue`
 
 ---
 
